@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-pEcK/…"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header>
+    <div class="logo">MACK·AI</div>
+    <div class="search">
+      <input type="text" placeholder="Buscar...">
+    </div>
+    <div class="icons">
+      <i class="fas fa-bell"></i>
+      <i class="fas fa-user-circle"></i>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="sidebar">
+      {% for period, groups in tree.items() %}
+        <h3>Período {{ period }}</h3>
+        {% for group, encontros in groups.items() %}
+          <div class="group-title">{{ group }}</div>
+          {% for encontro in encontros %}
+            <div class="item {% if encontro == current %}active{% endif %}">
+              <a href="{{ url_for('show_encontro',
+                                   period=period,
+                                   group=group,
+                                   idx=loop.index0) }}">
+                {{ encontro.title }}
+              </a>
+            </div>
+          {% endfor %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+
+    <div class="content">
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+</body>
+</html>

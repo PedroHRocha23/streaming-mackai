@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}{{ e.title }}{% endblock %}
+
+{% block content %}
+  <h1>{{ e.title }}</h1>
+  <p>{{ e.description }}</p>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/{{ e.youtube_id }}"
+            allowfullscreen></iframe>
+  </div>
+{% endblock %}

@@ -1,0 +1,65 @@
+Byte-compiled / optimized / DLL files
+
+pycache/
+*.py[cod]
+*$py.class
+
+C extensions
+
+*.so
+
+Virtual environment
+
+venv/
+ENV/
+.env
+.venv/
+
+Distribution / packaging
+
+build/
+dist/
+downloads/
+eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+
+Flask instance folder
+
+instance/
+.webassets-cache
+
+Unit test / coverage
+
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+
+Translations
+
+*.mo
+*.pot
+
+Database files
+
+*.db
+*.sqlite3
+
+Jupyter Notebook
+
+.ipynb_checkpoints/
+
+IDE settings and system files
+
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
